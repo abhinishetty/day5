@@ -1,0 +1,36 @@
+button:hover{
+    color:rgb(7, 3, 7);
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background: #62e7e7;
+    border-radius: 8px;
+}
+button{
+    color:rgb(7, 3, 7);
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background: #97878c;
+    border-radius: 8px;
+}
+
+h1{
+    font-style: italic;
+    color: black;
+    font-family: cursive;
+    text-align: center;
+}
+
+#inp {
+     height: 50px;
+            font-size: 24px;
+            background: #c0cfd6;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            overflow-x: auto;
+            width: 300px; 
+  
+}
