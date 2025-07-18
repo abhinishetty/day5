@@ -1,0 +1,334 @@
+
+export function add(x,y)
+{
+
+    return x+y;
+ }
+
+export function sub(x,y)
+{
+
+    return x-y;
+ }
+ export function product(x,y)
+{
+
+    return x*y;
+ }
+ export function div(x,y)
+{
+
+    return x/y;
+ }
+
+
+
+
+
+
+
+
+
+
+
+// let result=add(10,20)
+// console.log("Result:",result)
+
+
+
+
+
+
+import { add,sub,product,div } from "./Third.js"
+let result=add(10,20);
+console.log("result ",result)
+
+let sub_result=sub(20,30)
+console.log("result ",sub_result)
+
+let product_result=product(25,30)
+console.log("result",product_result)
+
+let div_product=div(87,30)
+console.log("result",div_product)
+
+
+
+
+
+
+ function add(x,y)
+{
+
+    return x+y;
+ }
+export {add}
+import { add } from "./Third";
+let result=add(10,20);
+console.log("result ",result)
+
+
+
+
+
+
+
+
+
+=
+
+
+ function add(x,y)
+{
+
+    return x+y;
+ }
+export default add
+
+
+import add from "./Third";
+let result=add(10,20);
+console.log("result ",result)
+
+
+==================
+synchronous: task one after another......in systematic way
+asynchronus prgrming: 
+
+asynchronous:
+console.log("program started")
+setTimeout(() => {
+    console.log("Fetching data from an api")
+}, 5000);
+
+console.log("closing our application")
+
+if it was synchronous it should wait till 2nd line completes thn 3rd line
+
+
+
+Third.js
+const datas=[
+    {name:"ABC",Proffesion:"Software Developer"},
+    {name:"XYZ",Proffesion:"Software Tester"}
+   ];
+function getDatas(){
+setTimeout(() => {
+    let output="";
+    datas.forEach((datas,index)=>{
+        output+=`<li>${datas.name}-${datas.Proffesion}</li>`
+
+    })
+document.body.innerHTML=output;
+
+
+}, 3000);
+}
+function createData(newData,callback){ //callback
+    setTimeout(() => {
+        datas.push(newData);
+        callback(); //callbac
+    }, 5000);
+}
+createData({name:"Ajay",Proffesion:"Database Admin"},getDatas); //getDatas is callback
+// getDatas(); 
+//to rsolve
+//callback ->if we put 20000 instead of 5000 it will work but if time is more it wont so we r using callback:but if we use callback nested it becomes difficult so we use promise
+//promise ->represents a values that may be available now,later or never: 3 states.pending(now),resolved,rejected
+//async
+
+
+Third_index.innerHTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employeee record</h1>
+    <script src="Third.js">
+
+    </script>
+</body>
+</html>
+===================================
+Promise
+
+
+const datas=[
+    {name:"ABC",Proffesion:"Software Developer"},
+    {name:"XYZ",Proffesion:"Software Tester"}
+   ];
+function getDatas(){
+setTimeout(() => {
+    let output="";
+    datas.forEach((datas,index)=>{
+        output+=`<li>${datas.name}-${datas.Proffesion}</li>`
+
+    })
+document.body.innerHTML=output;
+
+
+}, 3000);
+}
+function createData(newData){
+    return new Promise((resolve,reject)=>{
+setTimeout(() => {
+        datas.push(newData);
+     //  let error=false; //to understand
+      let error=true //inspect-> console some error occured.......... 
+        if(!error){
+            resolve();
+        }
+        else{
+            reject("some error occured..........")
+        }
+       
+    }, 5000);
+    })
+    
+}
+createData({name:"Ajay",Proffesion:"Database Admin"})
+.then(getDatas)
+.catch(err=>console.log(err));
+//whn promise is sucess so we use then
+//createData is promise
+//to rsolve
+//callback ->if we put 20000 instead of 5000 it will work but if time is more it wont so we r using callback:
+//promise
+//async
+===================================================
+Aync await 
+const datas=[
+    {name:"ABC",Proffesion:"Software Developer"},
+    {name:"XYZ",Proffesion:"Software Tester"}
+   ];
+function getDatas(){
+setTimeout(() => {
+    let output="";
+    datas.forEach((datas,index)=>{
+        output+=`<li>${datas.name}-${datas.Proffesion}</li>`
+
+    })
+document.body.innerHTML=output;
+
+
+}, 3000);
+}
+function createData(newData){
+    return new Promise((resolve,reject)=>{
+setTimeout(() => {
+        datas.push(newData);
+     //  let error=false; //to understand
+      let error=false 
+        if(!error){
+            resolve();
+        }
+        else{
+            reject("some error occured..........")
+        }
+       
+    }, 5000);
+    })
+    
+}
+
+async function start(){
+   await createData({name:"Ajay",Proffesion:"Database Admin"});
+    getDatas();
+}
+
+start();
+
+
+
+//async -await //aync=built on top of promise=>makes a functn return a promise
+
+//await =1st promise shoud be resolve then  remaining will execute
+====================================================
+
+ES6:
+
+1}
+Templete iterals: in es6
+// let name="Abhi";
+// let city="Mysore";
+//  let proffesion="student"
+// // console.log("welcome To java Script Session",name,"I am from",city,"My proffession is:",proffesion);
+// console.log(`My name is:${name}.I am from city: ${city}.My proffesion is ${proffesion}`)
+
+
+let num=[10,20,30,40];
+let [x,y,z,a]=num;
+console.log(x);
+console.log(y);
+console.log(z);
+console.log(a);
+//array destructurig
+
+2}
+//Spread operators
+let num=[10,20,30,40];
+let second_num=[...num,50,60];
+console.log(num);
+console.log(second_num)
+
+3}
+//Rest operators:
+
+function displayName(...names)
+{
+    console.log(names);
+}
+displayName("Ajay","Sachin","Ravi","Ajeet")
+
+ex:
+function sum(...numbers){
+    return numbers.reduce((a,b)=> a+b);
+}
+console.log(sum(1,2,3,4,5,6,7,8,9))
+
+4) class:
+class Employee{
+    constructor(name){
+        this.name=name
+    }
+    greet(){
+        console.log(`Welcome :${this.name}`)
+    }
+}
+let emp1=new Employee("Ravi");
+let emp2=new Employee("Ajay");
+let emp3=new Employee("Sachin");
+emp1.greet();
+emp2.greet();
+emp3.greet();
+
+
+The class provides a structured way to create objects and organize methods related to that object.
+
+The constructor method is used to initialize the instance's properties.
+
+The greet() method allows interaction with the Employee instance.
+
+5}
+Map
+let emp=new Map();
+emp.set("id","111")
+emp.set("name","Ajay")
+emp.set("city","Mangalore")
+
+console.log(emp.get("id"),emp.get("name"),emp.get("city"));
+
+6}
+Set:
+
+let set=new Set()
+set.add(10);
+set.add(20);
+set.add(30);
+set.add(40);
+set.add(20); //set holds only a unique element not duplicate elements
+console.log(set)
