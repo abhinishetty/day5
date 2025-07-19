@@ -1,0 +1,95 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 40px;
+  color: #333;
+}
+
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+
+#taskInput {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #180c0c;
+  border-radius: 10px;
+  margin-right: 10px;
+  outline: none;
+  align-items: center;
+  
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: rgb(248, 239, 239);
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: #111a24;
+}
+
+#taskForm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+#taskList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  background-color: rgb(214, 210, 216);
+  border: 1px solid #e0e0e0;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+/* Task Text & Checkbox */
+li input[type="checkbox"] {
+  margin-right: 12px;
+}
+
+li span {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+/* Delete button */
+li button {
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #dc3545;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  
+}
+
+li button:hover {
+  background-color: #a71d2a;
+}
